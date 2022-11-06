@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "jqktrader"
+version = "0.1.0"
+description = ""
+authors = ["pluto <mayuanchi1029@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pywinauto = "0.6.6"
+easyutils = "^0.1.7"
+pandas = "^1.5.1"
+pytesseract = "^0.3.10"
+pypiwin32 = "^223"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.17.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
