@@ -102,7 +102,7 @@ class ClientTrader(IClientTrader):
     def config(self):
         return self._config
 
-    def connect(self, exe_path=None, tesseract_cmd=None, **kwargs):
+    def connect(self, exe_path=None, tesseract_cmd=None, editor_need_type_keys=True, **kwargs):
         """
         直接连接登陆后的客户端
         :param exe_path: 客户端路径类似 r'C:\\htzqzyb2\\xiadan.exe', 默认 r'C:\\htzqzyb2\\xiadan.exe'
@@ -121,6 +121,7 @@ class ClientTrader(IClientTrader):
         self._close_prompt_windows()
         self._main = self._app.top_window()
         self._init_toolbar()
+        self._editor_need_type_keys = editor_need_type_keys
 
     @property
     def broker_type(self):
