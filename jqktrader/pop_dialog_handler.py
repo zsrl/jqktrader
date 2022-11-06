@@ -5,7 +5,7 @@ from typing import Optional
 
 from jqktrader import exceptions
 from jqktrader.utils.perf import perf_clock
-from jqktrader.utils.win_gui import SetForegroundWindow, ShowWindow, win32defines
+from jqktrader.utils.win_gui import ShowWindow, win32defines
 
 
 class PopDialogHandler:
@@ -17,7 +17,8 @@ class PopDialogHandler:
         if window.has_style(win32defines.WS_MINIMIZE):  # if minimized
             ShowWindow(window.wrapper_object(), 9)  # restore window state
         else:
-            SetForegroundWindow(window.wrapper_object())  # bring to front
+            window.wrapper_object().set_focus()
+            # SetForegroundWindow(window.wrapper_object())  # bring to front
 
     @perf_clock
     def handle(self, title):

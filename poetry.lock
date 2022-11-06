@@ -502,7 +502,7 @@ python-versions = "*"
 
 [[package]]
 name = "pywinauto"
-version = "0.6.6"
+version = "0.6.8"
 description = "A set of Python modules to automate the Microsoft Windows GUI"
 category = "main"
 optional = false
@@ -510,6 +510,7 @@ python-versions = "*"
 
 [package.dependencies]
 comtypes = "*"
+pywin32 = "*"
 six = "*"
 
 [[package]]
@@ -610,7 +611,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "f0a3f4719d2dd02ccaba205d5f9bc04ab5483508305513fe9dbde20d74e022af"
+content-hash = "0b9aea507299dfb4040d6cf2faeaf9e29084936e654a7fe4645c1556660a6ee5"
 
 [metadata.files]
 appnope = [
@@ -1091,8 +1092,8 @@ pywin32 = [
     {file = "pywin32-304-cp39-cp39-win_amd64.whl", hash = "sha256:d24a3382f013b21aa24a5cfbfad5a2cd9926610c0affde3e8ab5b3d7dbcf4ac9"},
 ]
 pywinauto = [
-    {file = "pywinauto-0.6.6-py3-none-any.whl", hash = "sha256:00f980342173ad466746b6d8fa94f4d7b529d69a63c9b33a57a6f90497c72dbe"},
-    {file = "pywinauto-0.6.6.tar.gz", hash = "sha256:5394e02eec42d329387f11003b502844730df9c475129bb785ff4e8351e5e086"},
+    {file = "pywinauto-0.6.8-py2.py3-none-any.whl", hash = "sha256:931ce622d7f402b1892ab472987a1332e4c0681bf87e106f798390d16ca95e58"},
+    {file = "pywinauto-0.6.8.tar.gz", hash = "sha256:de23f1e977cc51e7eddd95c8f365710343136433968d1e2ad377962d6bd6540a"},
 ]
 pyzmq = [
     {file = "pyzmq-24.0.1-cp310-cp310-macosx_10_15_universal2.whl", hash = "sha256:28b119ba97129d3001673a697b7cce47fe6de1f7255d104c2f01108a5179a066"},

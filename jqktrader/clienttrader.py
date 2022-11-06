@@ -12,6 +12,7 @@ import hashlib, binascii
 
 import easyutils
 from pywinauto import findwindows, timings
+import pytesseract
 
 from jqktrader import grid_strategies, pop_dialog_handler, refresh_strategies
 from jqktrader.config import client
@@ -101,12 +102,15 @@ class ClientTrader(IClientTrader):
     def config(self):
         return self._config
 
-    def connect(self, exe_path=None, **kwargs):
+    def connect(self, exe_path=None, tesseract_cmd=None, **kwargs):
         """
         直接连接登陆后的客户端
         :param exe_path: 客户端路径类似 r'C:\\htzqzyb2\\xiadan.exe', 默认 r'C:\\htzqzyb2\\xiadan.exe'
         :return:
         """
+        # tesseract地址
+        pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+
         connect_path = exe_path or self._config.DEFAULT_EXE_PATH
         if connect_path is None:
             raise ValueError(

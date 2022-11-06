@@ -7,11 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pywinauto = "0.6.6"
 easyutils = "^0.1.7"
 pandas = "^1.5.1"
 pytesseract = "^0.3.10"
 pypiwin32 = "^223"
+pywinauto = "^0.6.8"
 
 
 [tool.poetry.group.dev.dependencies]

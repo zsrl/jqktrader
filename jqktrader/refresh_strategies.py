@@ -12,7 +12,7 @@ import pywinauto.clipboard
 
 from jqktrader.log import logger
 from jqktrader.utils.captcha import captcha_recognize
-from jqktrader.utils.win_gui import SetForegroundWindow, ShowWindow, win32defines
+from jqktrader.utils.win_gui import ShowWindow, win32defines
 
 if TYPE_CHECKING:
     # pylint: disable=unused-import

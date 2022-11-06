@@ -12,7 +12,7 @@ import pywinauto.clipboard
 
 from jqktrader.log import logger
 from jqktrader.utils.captcha import captcha_recognize
-from jqktrader.utils.win_gui import SetForegroundWindow, ShowWindow, win32defines
+from jqktrader.utils.win_gui import ShowWindow, win32defines
 
 if TYPE_CHECKING:
     # pylint: disable=unused-import
@@ -63,7 +63,8 @@ class BaseStrategy(IGridStrategy):
             if grid.has_style(win32defines.WS_MINIMIZE):  # if minimized
                 ShowWindow(grid.wrapper_object(), 9)  # restore window state
             else:
-                SetForegroundWindow(grid.wrapper_object())  # bring to front
+                grid.wrapper_object().set_focus()
+                # SetForegroundWindow(grid.wrapper_object())  # bring to front
         except:
             pass
 
@@ -115,22 +116,28 @@ class Copy(BaseStrategy):
                     if len(captcha_num) == 4:
                         self._trader.app.top_window().window(
                             control_id=0x964, class_name="Edit"
-                        ).set_text(
-                            captcha_num
-                        )  # 模拟输入验证码
+                        ).set_focus()
+
+                        pywinauto.keyboard.SendKeys(captcha_num)
 
                         self._trader.app.top_window().set_focus()
                         pywinauto.keyboard.SendKeys("{ENTER}")  # 模拟发送enter，点击确定
-                        try:
-                            logger.info(
-                                self._trader.app.top_window()
-                                    .window(control_id=0x966, class_name="Static")
-                                    .window_text()
-                            )
-                        except Exception as ex:  # 窗体消失
-                            logger.exception(ex)
+
+                        if (self._trader.app.top_window().window(class_name="Static", title_re="验证码").exists(timeout=1)):
+                            logger.info("验证码识别错误")
+                        else:
                             found = True
                             break
+                        # try:
+                        #     logger.info(
+                        #         self._trader.app.top_window()
+                        #             .window(control_id=0x966, class_name="Static")
+                        #             .window_text()
+                        #     )
+                        # except Exception as ex:  # 窗体消失
+                        #     logger.exception(ex)
+                        #     found = True
+                        #     break
                     count -= 1
                     self._trader.wait(0.1)
                     self._trader.app.top_window().window(
