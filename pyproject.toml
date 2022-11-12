@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jqktrader"
-version = "0.1.0"
+version = "0.1.3"
 description = ""
 authors = ["pluto <mayuanchi1029@gmail.com>"]
 readme = "README.md"
