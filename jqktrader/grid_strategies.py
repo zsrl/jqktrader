@@ -118,6 +118,8 @@ class Copy(BaseStrategy):
                             control_id=0x964, class_name="Edit"
                         ).set_focus()
 
+                        pywinauto.keyboard.SendKeys("{BKSP}{BKSP}{BKSP}{BKSP}")
+
                         pywinauto.keyboard.SendKeys(captcha_num)
 
                         self._trader.app.top_window().set_focus()
