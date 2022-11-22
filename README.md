@@ -27,6 +27,7 @@
 ```
 pip install jqktrader
 ```
+> 需要python版本3.8+
 
 # 用法
 
