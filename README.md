@@ -1,7 +1,8 @@
-![qrcode](./qrcode.png)
 # jqktrader
 
 同花顺自动程序化交易
+
+**注意**：该库使用使用`pywinauto`实现，本质上是一个按键精灵，代替手动下单，不能保证100%成功，请实盘时慎重使用。
 
 # 目的
 
@@ -55,4 +56,11 @@ user.position
 沿用easyTrader官方的api，非同花顺相关的已删除。
 
 参看文档：https://easytrader.readthedocs.io/zh/master/usage/
+
+## 联系方式
+
+欢迎加入QQ群或关注公众号，分享量化技术！
+
+<img src="./qq.png" width=300>
+<img src="./qrcode.jpg" width=300>
 
