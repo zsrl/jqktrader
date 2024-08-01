@@ -1,6 +1,6 @@
 # 注意！！！由于此种方式交易并不稳定，此项目以停止维护！！！请选择QMT/Ptrade等专业量化交易软件代替！！！
 
-需要QMT/Ptrade开通渠道的可以联系我。
+需要QMT/Ptrade开通渠道的参看连接：[《QMT开通规则分享》](https://i77j0z62us.feishu.cn/wiki/wikcnjb8jG8Aqt3aj6rM3JRMz2b)
 
 # jqktrader
 
@@ -60,11 +60,4 @@ user.position
 沿用easyTrader官方的api，非同花顺相关的已删除。
 
 参看文档：https://easytrader.readthedocs.io/zh/master/usage/
-
-## 联系方式
-
-欢迎加入QQ群或关注公众号，分享量化技术！
-
-<img src="./qq.png" width=300>
-<img src="./qrcode.jpg" width=300>
 
